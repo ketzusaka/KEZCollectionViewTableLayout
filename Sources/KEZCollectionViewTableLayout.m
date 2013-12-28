@@ -1,5 +1,5 @@
 //
-//  KZCollectionViewTableLayout.m
+//  KEZCollectionViewTableLayout.m
 //  SampleTableLayout
 //
 //  Created by James Richard on 12/9/13.

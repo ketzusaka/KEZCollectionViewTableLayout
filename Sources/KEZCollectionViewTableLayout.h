@@ -1,5 +1,5 @@
 //
-//  KZCollectionViewTableLayout.h
+//  KEZCollectionViewTableLayout.h
 //  SampleTableLayout
 //
 //  Created by James Richard on 12/9/13.
