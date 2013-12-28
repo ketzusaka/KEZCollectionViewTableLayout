@@ -1,0 +1,17 @@
+PODS:
+  - OCHamcrest (3.0.1)
+  - OCMock (2.2.1)
+  - xctest-assert-eventually (0.1.1):
+    - OCHamcrest
+
+DEPENDENCIES:
+  - OCHamcrest (~> 3.0.0)
+  - OCMock (~> 2.2)
+  - xctest-assert-eventually
+
+SPEC CHECKSUMS:
+  OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
+  OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
+  xctest-assert-eventually: e42d7f59735d03a50ab9c1047275bb27deb1d16d
+
+COCOAPODS: 0.28.0
