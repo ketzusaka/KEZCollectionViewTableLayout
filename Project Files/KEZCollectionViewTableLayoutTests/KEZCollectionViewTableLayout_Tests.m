@@ -59,6 +59,29 @@ static NSString * const kKEZHeaderRowSizes = @"kKEZHeaderRowSizes";
   assertThat([NSValue valueWithCGSize:self.layout.maximumCellSize], equalTo([NSValue valueWithCGSize:maxSize]));
 }
 
+#pragma mark - Registering Decoration Views
+- (void) testRegisteringClassForCornerCell_allowsCornerCellUse {
+  [self configureLayoutWithCellSize:CGSizeMake(50.0f, 50.0f) withRows:@[@2, @5] columnHeaderHeight:100.0f rowHeaderWidth:100.0f stickyHeaders:NO contentInsets:UIEdgeInsetsZero cornerCell:YES];
+  assertThat([self.layout layoutAttributesForDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], notNilValue());
+}
+
+- (void) testUnregisteringClassForCornerCell_removesCornerCellAttributes {
+  [self configureLayoutWithCellSize:CGSizeMake(50.0f, 50.0f) withRows:@[@2, @5] columnHeaderHeight:100.0f rowHeaderWidth:100.0f stickyHeaders:NO contentInsets:UIEdgeInsetsZero cornerCell:YES];
+  [self unregisterCornerCellUsingNib:NO];
+  assertThat([self.layout layoutAttributesForDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], nilValue());
+}
+
+- (void) testRegisteringNibForCornerCell_allowsCornerCellUse {
+  [self configureLayoutWithCellSize:CGSizeMake(50.0f, 50.0f) withRows:@[@2, @5] columnHeaderHeight:100.0f rowHeaderWidth:100.0f stickyHeaders:NO contentInsets:UIEdgeInsetsZero cornerCell:YES cornerCellAsNib:YES];
+  assertThat([self.layout layoutAttributesForDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], notNilValue());
+}
+
+- (void) testUnregisteringNibForCornerCell_removesCornerCellAttributes {
+  [self configureLayoutWithCellSize:CGSizeMake(50.0f, 50.0f) withRows:@[@2, @5] columnHeaderHeight:100.0f rowHeaderWidth:100.0f stickyHeaders:NO contentInsets:UIEdgeInsetsZero cornerCell:YES cornerCellAsNib:YES];
+  [self unregisterCornerCellUsingNib:YES];
+  assertThat([self.layout layoutAttributesForDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], nilValue());
+}
+
 #pragma mark - Collection View Content Size
 #pragma mark Using properties
 - (void) testCollectionViewContentSize_withOneRow_adheresToSizing {
@@ -590,6 +613,11 @@ static NSString * const kKEZHeaderRowSizes = @"kKEZHeaderRowSizes";
 }
 
 - (void) configureLayoutWithCellSize:(CGSize)size withRows:(NSArray *)rows columnHeaderHeight:(CGFloat)columnHeaderHeight rowHeaderWidth:(CGFloat)rowHeaderWidth stickyHeaders:(BOOL)stickyHeaders contentInsets:(UIEdgeInsets)contentInsets cornerCell:(BOOL)cornerCell {
+  [self configureLayoutWithCellSize:size withRows:rows columnHeaderHeight:columnHeaderHeight rowHeaderWidth:rowHeaderWidth stickyHeaders:stickyHeaders contentInsets:contentInsets cornerCell:cornerCell cornerCellAsNib:NO];
+}
+
+
+- (void) configureLayoutWithCellSize:(CGSize)size withRows:(NSArray *)rows columnHeaderHeight:(CGFloat)columnHeaderHeight rowHeaderWidth:(CGFloat)rowHeaderWidth stickyHeaders:(BOOL)stickyHeaders contentInsets:(UIEdgeInsets)contentInsets cornerCell:(BOOL)cornerCell cornerCellAsNib:(BOOL)cornerCellAsNib {
   [self setupWithoutDelegate];
   self.collectionView.contentInset = contentInsets;
   
@@ -603,7 +631,11 @@ static NSString * const kKEZHeaderRowSizes = @"kKEZHeaderRowSizes";
     self.layout.rowHeaderWidth = rowHeaderWidth;
   
   if (cornerCell) {
-    [self.layout registerClass:[OCMockObject niceMockForClass:[UICollectionReusableView class]] forDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell];
+    if (cornerCellAsNib) {
+      [self.layout registerNib:[OCMockObject niceMockForClass:[UINib class]] forDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell];
+    } else {
+      [self.layout registerClass:[OCMockObject niceMockForClass:[UICollectionReusableView class]] forDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell];
+    }
   }
   
   [self prepareLayoutWithDataSourceHavingRows:rows];
@@ -744,6 +776,16 @@ static NSString * const kKEZHeaderRowSizes = @"kKEZHeaderRowSizes";
 - (void) invalidateLayoutForBounds:(CGRect)bounds {
   UICollectionViewLayoutInvalidationContext *context = [self.layout invalidationContextForBoundsChange:bounds];
   [self.layout invalidateLayoutWithContext:context];
+  [self.layout prepareLayout];
+}
+
+- (void) unregisterCornerCellUsingNib:(BOOL)usingNib {
+  if (usingNib)
+    [self.layout registerNib:nil forDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell];
+  else
+    [self.layout registerClass:nil forDecorationViewOfKind:KEZCollectionViewTableLayoutDecorationViewCornerCell];
+  
+  [self.layout invalidateLayout];
   [self.layout prepareLayout];
 }
 

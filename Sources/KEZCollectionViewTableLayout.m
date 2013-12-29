@@ -109,13 +109,13 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
 - (void) registerClass:(Class)viewClass forDecorationViewOfKind:(NSString *)decorationViewKind {
   [super registerClass:viewClass forDecorationViewOfKind:decorationViewKind];
   if ([decorationViewKind isEqualToString:KEZCollectionViewTableLayoutDecorationViewCornerCell])
-    self.hasRegisteredCellCornerDecorationView = YES;
+    self.hasRegisteredCellCornerDecorationView = viewClass != nil;
 }
 
 - (void) registerNib:(UINib *)nib forDecorationViewOfKind:(NSString *)decorationViewKind {
   [super registerNib:nib forDecorationViewOfKind:decorationViewKind];
   if ([decorationViewKind isEqualToString:KEZCollectionViewTableLayoutDecorationViewCornerCell])
-    self.hasRegisteredCellCornerDecorationView = YES;
+    self.hasRegisteredCellCornerDecorationView = nib != nil;
 }
 
 - (void) prepareLayout {
