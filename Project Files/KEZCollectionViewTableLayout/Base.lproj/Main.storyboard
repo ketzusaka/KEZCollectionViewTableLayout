@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ckI-an-LD5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ckI-an-LD5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -34,7 +34,7 @@
                             <tableViewSection id="Xy0-jN-ufg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="zIP-gS-weO" style="IBUITableViewCellStyleDefault" id="17G-HE-d9X">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="17G-HE-d9X" id="i5A-aT-WLF">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -54,7 +54,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="bdc-ph-p1O" style="IBUITableViewCellStyleDefault" id="dyl-zI-5Hd">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dyl-zI-5Hd" id="yeV-M8-bpI">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -74,7 +74,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="jGL-la-8fd" style="IBUITableViewCellStyleDefault" id="ses-qy-Mxl">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ses-qy-Mxl" id="BxL-r3-TWN">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -94,7 +94,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="MiJ-hU-lws" style="IBUITableViewCellStyleDefault" id="y8K-2d-uHp">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="196" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y8K-2d-uHp" id="ulC-6H-Vmx">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -114,7 +114,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="w6l-2X-s1A" style="IBUITableViewCellStyleDefault" id="1yr-Oq-TUe">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="240" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1yr-Oq-TUe" id="nHc-sp-tPf">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -134,7 +134,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="set-xc-Zyi" style="IBUITableViewCellStyleDefault" id="OGh-v7-TsS">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="284" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OGh-v7-TsS" id="rjr-Qe-GJu">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -154,7 +154,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="v6e-mP-QNj" style="IBUITableViewCellStyleDefault" id="4U8-rf-V28">
-                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="328" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4U8-rf-V28" id="jbN-GM-1OH">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -190,7 +190,7 @@
         <!--Row Headers-->
         <scene sceneID="Ci7-Ci-OZq">
             <objects>
-                <viewController id="rji-IB-hyC" userLabel="Row Headers" customClass="KZSampleTableViewController" sceneMemberID="viewController">
+                <viewController id="rji-IB-hyC" userLabel="Row Headers" customClass="KEZSampleTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vAc-Z5-4DD"/>
                         <viewControllerLayoutGuide type="bottom" id="JXt-qN-kVx"/>
@@ -205,8 +205,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="qZ5-ht-6II" customClass="KEZCollectionViewTableLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="VKu-gY-4Nu" customClass="KZLabelCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="VKu-gY-4Nu" customClass="KEZLabelCell">
+                                        <rect key="frame" x="0.0" y="64" width="97" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
@@ -263,7 +263,7 @@
         <!--Both Headers-->
         <scene sceneID="2rI-8v-A8w">
             <objects>
-                <viewController id="rKi-TN-kr5" userLabel="Both Headers" customClass="KZSampleTableViewController" sceneMemberID="viewController">
+                <viewController id="rKi-TN-kr5" userLabel="Both Headers" customClass="KEZSampleTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="onO-7P-jXK"/>
                         <viewControllerLayoutGuide type="bottom" id="smS-Xf-erb"/>
@@ -278,8 +278,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="RVO-Jd-gTl" customClass="KEZCollectionViewTableLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="pGM-K1-QUc" customClass="KZLabelCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="pGM-K1-QUc" customClass="KEZLabelCell">
+                                        <rect key="frame" x="0.0" y="64" width="97" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
@@ -331,7 +331,7 @@
         <!--Column Headers-->
         <scene sceneID="UnV-9k-KU6">
             <objects>
-                <viewController id="V9b-3F-HSP" userLabel="Column Headers" customClass="KZSampleTableViewController" sceneMemberID="viewController">
+                <viewController id="V9b-3F-HSP" userLabel="Column Headers" customClass="KEZSampleTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kbr-E3-Mfr"/>
                         <viewControllerLayoutGuide type="bottom" id="PQG-R0-m7H"/>
@@ -346,8 +346,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="i32-h5-wBZ" customClass="KEZCollectionViewTableLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="JcW-Z0-LOA" customClass="KZLabelCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="JcW-Z0-LOA" customClass="KEZLabelCell">
+                                        <rect key="frame" x="0.0" y="64" width="97" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
@@ -404,7 +404,7 @@
         <!--Plain Table-->
         <scene sceneID="PKU-qc-wCz">
             <objects>
-                <viewController id="gka-MA-VkK" userLabel="Plain Table" customClass="KZSampleTableViewController" sceneMemberID="viewController">
+                <viewController id="gka-MA-VkK" userLabel="Plain Table" customClass="KEZSampleTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9nI-Eh-sFG"/>
                         <viewControllerLayoutGuide type="bottom" id="mNM-Eq-Lwd"/>
@@ -419,8 +419,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="wRx-a6-p2v" customClass="KEZCollectionViewTableLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="Dbp-r2-1vM" customClass="KZLabelCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="Dbp-r2-1vM" customClass="KEZLabelCell">
+                                        <rect key="frame" x="0.0" y="64" width="97" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
@@ -474,7 +474,7 @@
         <!--Sticky Headered-->
         <scene sceneID="Gfk-Je-Fka">
             <objects>
-                <viewController id="rZE-4U-0Tu" userLabel="Sticky Headered" customClass="KZSampleTableViewController" sceneMemberID="viewController">
+                <viewController id="rZE-4U-0Tu" userLabel="Sticky Headered" customClass="KEZSampleTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8cg-wT-OiK"/>
                         <viewControllerLayoutGuide type="bottom" id="R1P-3Q-Ohe"/>
@@ -493,8 +493,8 @@
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewLayout>
                                 <cells>
-                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="25i-UA-L8B" customClass="KZLabelCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="25i-UA-L8B" customClass="KEZLabelCell">
+                                        <rect key="frame" x="0.0" y="64" width="97" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
@@ -547,7 +547,7 @@
         <!--Headered with Corner Cell-->
         <scene sceneID="y0a-XT-Lm7">
             <objects>
-                <viewController id="XiV-Ok-7vL" userLabel="Headered with Corner Cell" customClass="KZSampleTableViewController" sceneMemberID="viewController">
+                <viewController id="XiV-Ok-7vL" userLabel="Headered with Corner Cell" customClass="KEZSampleTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3pr-74-ZgE"/>
                         <viewControllerLayoutGuide type="bottom" id="Vg2-zh-bvm"/>
@@ -562,8 +562,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="Bcx-jY-rPb" customClass="KEZCollectionViewTableLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="1Zb-eb-lNU" customClass="KZLabelCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="1Zb-eb-lNU" customClass="KEZLabelCell">
+                                        <rect key="frame" x="0.0" y="64" width="97" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
@@ -615,7 +615,7 @@
         <!--Sticky Headered with Corner Cell-->
         <scene sceneID="nke-mz-Dq9">
             <objects>
-                <viewController id="eVl-yO-60Q" userLabel="Sticky Headered with Corner Cell" customClass="KZSampleTableViewController" sceneMemberID="viewController">
+                <viewController id="eVl-yO-60Q" userLabel="Sticky Headered with Corner Cell" customClass="KEZSampleTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XcV-UM-6cr"/>
                         <viewControllerLayoutGuide type="bottom" id="VbU-nI-Zxb"/>
@@ -634,8 +634,8 @@
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewLayout>
                                 <cells>
-                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="Nui-kh-y6C" customClass="KZLabelCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCell" id="Nui-kh-y6C" customClass="KEZLabelCell">
+                                        <rect key="frame" x="0.0" y="64" width="97" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="80"/>
