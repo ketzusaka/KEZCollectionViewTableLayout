@@ -30,8 +30,8 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
 @implementation KEZTableSizing
 - (instancetype) init {
   if (self = [super init]) {
-    _rows = [NSMutableDictionary dictionary];
-    _columns = [NSMutableDictionary dictionary];
+    _rows = [[NSMutableDictionary alloc] init];
+    _columns = [[NSMutableDictionary alloc] init];
     _columnHeaderHeight = 0;
     _rowHeaderWidth = 0;
   }
