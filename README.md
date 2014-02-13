@@ -117,3 +117,7 @@ Runtime Attributes for the view controllers and layouts within the storyboard to
 
 The sample application also includes all the unit tests written for the layout.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ketzusaka/kezcollectionviewtablelayout/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
