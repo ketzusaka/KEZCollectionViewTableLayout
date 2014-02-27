@@ -67,7 +67,7 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
 #pragma mark - KEZCollectionViewTableLayout
 @interface KEZCollectionViewTableLayout ()
 @property (nonatomic) CGSize collectionViewContentSize;
-@property (nonatomic, strong) NSDictionary *cellAttributes;
+@property (nonatomic, strong) NSArray *cellAttributes;
 @property (nonatomic, strong) NSDictionary *supplementaryAttributes;
 @property (nonatomic, strong) NSDictionary *decorationAttributes;
 @property (nonatomic, strong) KEZTableSizing *tableSizing;
@@ -99,6 +99,7 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
   _maximumCellSize = CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
   _rowHeaderWidth = 0.0f;
   _columnHeaderHeight = 0.0f;
+  _collectionViewContentSize = CGSizeZero;
 }
 
 #pragma mark - UICollectionViewLayout Overrides
@@ -121,11 +122,12 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
 - (void) prepareLayout {
   [super prepareLayout];
   [self buildLayoutAttributes];
-  [self buildCollectionViewContentSize];
+  if (CGSizeEqualToSize(self.collectionViewContentSize, CGSizeZero))
+    [self buildCollectionViewContentSize];
 }
 
 - (UICollectionViewLayoutAttributes *) layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-  return self.cellAttributes[indexPath];
+  return self.cellAttributes[indexPath.section][indexPath.row];
 }
 
 - (UICollectionViewLayoutAttributes *) layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -138,13 +140,22 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
 
 - (NSArray *) layoutAttributesForElementsInRect:(CGRect)rect {
   NSMutableArray *elements = [NSMutableArray array];
+  
+  for (NSArray *rows in self.cellAttributes) {
+    for (UICollectionViewLayoutAttributes *attributes in rows) {
+      if (CGRectIntersectsRect(rect, attributes.frame)) {
+        [elements addObject:attributes];
+      }
+    }
+  }
+
   void (^handler)(id key, UICollectionViewLayoutAttributes *attributes, BOOL *stop) = ^(id key, UICollectionViewLayoutAttributes *attributes, BOOL *stop){
     if (CGRectIntersectsRect(rect, attributes.frame)) {
       [elements addObject:attributes];
     }
   };
   
-  [self.cellAttributes enumerateKeysAndObjectsUsingBlock:handler];
+  
   [self.supplementaryAttributes[KEZCollectionViewTableLayoutSupplementaryViewColumnHeader] enumerateKeysAndObjectsUsingBlock:handler];
   [self.supplementaryAttributes[KEZCollectionViewTableLayoutSupplementaryViewRowHeader] enumerateKeysAndObjectsUsingBlock:handler];
   [self.decorationAttributes[KEZCollectionViewTableLayoutDecorationViewCornerCell] enumerateKeysAndObjectsUsingBlock:handler];
@@ -181,6 +192,7 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
   [super invalidateLayoutWithContext:context];
   if (!context.useCachedSizing) {
     self.tableSizing = nil;
+    self.collectionViewContentSize = CGSizeZero;
   } else {
     self.skipBuildingCellAttributes = YES;
   }
@@ -208,14 +220,14 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
   if (sections > 0) {
     NSUInteger lastRowCells = [self.collectionView numberOfItemsInSection:sections - 1];
     if (lastRowCells > 0) {
-      UICollectionViewLayoutAttributes *lastAttributes = self.cellAttributes[[NSIndexPath indexPathForRow:lastRowCells - 1 inSection:sections - 1]];
+      UICollectionViewLayoutAttributes *lastAttributes = self.cellAttributes[sections - 1][lastRowCells - 1];
       height = CGRectGetMaxY(lastAttributes.frame);
     }
     
     for (NSUInteger i = 0; i != sections; i++) {
       NSUInteger cells = [self.collectionView numberOfItemsInSection:i];
       if (cells > 0) {
-        UICollectionViewLayoutAttributes *attributes = self.cellAttributes[[NSIndexPath indexPathForRow:cells - 1 inSection:i]];
+        UICollectionViewLayoutAttributes *attributes = self.cellAttributes[i][cells - 1];
         width = MAX(width, CGRectGetMaxX(attributes.frame));
       }
     }
@@ -245,7 +257,7 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
 
 - (void) buildCellAttributes {
   KEZTableSizing *sizing = self.tableSizing;
-  NSMutableDictionary *tmpAttributes = [NSMutableDictionary dictionary];
+  NSMutableArray *tmpAttributes = [[NSMutableArray alloc] init];
   CGFloat yOffset = sizing.columnHeaderHeight;
   NSUInteger sections = [self.collectionView numberOfSections];
   for (NSUInteger section = 0; section != sections; section++) {
@@ -253,20 +265,23 @@ NSString * const KEZCollectionViewTableLayoutDecorationViewCornerCell = @"KEZCol
     CGFloat xOffset = sizing.rowHeaderWidth;
     CGFloat height = [sizing heightForRow:section];
     
+    NSMutableArray *tmpRowAttributes = [[NSMutableArray alloc] init];
     for (NSUInteger row = 0; row != rows; row++) {
       NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
       CGFloat width = [sizing widthForColumn:row];
       
       UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
       attributes.frame = CGRectMake(xOffset, yOffset, width, height);
-      tmpAttributes[indexPath] = attributes;
+      [tmpRowAttributes addObject:attributes];
       xOffset += width;
     }
+    
+    [tmpAttributes addObject:tmpRowAttributes];
     
     yOffset += height;
   }
   
-  self.cellAttributes = [tmpAttributes copy];
+  self.cellAttributes = tmpAttributes;
 }
 
 - (void) buildSupplementaryAttributes {
